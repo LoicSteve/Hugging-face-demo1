@@ -1,6 +1,6 @@
 #This bis a basic workflow to get started with Actions
 
-name: CI
+name: Synch to Hugging Face hub
 
 # Controls when the workflow will run
 on:
@@ -23,5 +23,9 @@ jobs:
           fetch-depth: 0
       - name: Add remote
         env:
-          HF: ${{ secrets.HF}}
-        run: git remode add space
+          HF: ${{ secrets.HF }}
+        run: git remode add space https://LoicSteve:$HF@huggingface.co/spaces/LoicSteve/demo1
+      - name: push to hub
+        env:
+          HF: ${{ secrets.HF }}
+        run: git push --force https://LoicSteve:$HF@huggingface.co/spaces/LoicSteve/demo1 main 
