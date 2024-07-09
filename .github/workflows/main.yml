@@ -24,7 +24,7 @@ jobs:
       - name: Add remote
         env:
           HF: ${{ secrets.HF }}
-        run: git remode add space https://LoicSteve:$HF@huggingface.co/spaces/LoicSteve/demo1
+        run: git remote add space https://LoicSteve:$HF@huggingface.co/spaces/LoicSteve/demo1
       - name: push to hub
         env:
           HF: ${{ secrets.HF }}
